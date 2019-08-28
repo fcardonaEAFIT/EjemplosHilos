@@ -25,6 +25,6 @@ linuxHNU: linuxHNU.o
 	$(CXX) -o $@ $^ -pthread
 
 clean:
-	rm -f crearHilo crearHilo2 crearHilo3 crearHilo4 linuxHNK linuxHNU
+	rm -f crearHilo crearHilo2 crearHilo3 crearHilo4 linuxHNK linuxHNU syncHNK sync2HNK
 	rm -f *.o
 	rm -f *.cpp~ makefile~
