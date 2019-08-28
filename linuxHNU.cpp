@@ -44,7 +44,7 @@ main() {
 
   p->primero = 20000;
   p->segundo = 30;
-  
+
   if (pthread_create(&hilo2, NULL, hiloExec, (void *)p) != 0) {
     cerr << "Fallo creacion de hilo" << endl;
     exit(0);
@@ -61,8 +61,8 @@ main() {
   pthread_join(hilo2, (void **) &retValHilo);
 
   cout << "Mi hijo termino con estado " << *retValHilo << endl;
-   
+
   delete retValHilo;
-  
+
   return 0;
 }
