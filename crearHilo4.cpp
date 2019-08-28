@@ -11,6 +11,7 @@ void* hilo(void*);
 
 const int N = 5;
 int var = 0;
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 int
 main() {
@@ -36,8 +37,11 @@ main() {
 void* hilo(void *arg) {
   int value = 10;
 
-  for (int i = 0; i < 5000; i++)
+  for (int i = 0; i < 5000; i++) {
+    pthread_mutex_lock(&mutex);
     var++;
+    pthread_mutex_unlock(&mutex);
+  }
 
-  return nullptr;
+  return &value;
 }
